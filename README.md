@@ -1,2 +1,2 @@
 # Jcasc
-jenkins configuracion como codigo
+jenkins configuracion como codigo.

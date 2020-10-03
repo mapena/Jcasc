@@ -8,6 +8,17 @@ credentials:
           password: "{AQAAABAAAAAQ0OaJ2KjlsGTFGHwRNZrXxzL1fvnu1sPMDYTZ/TlSkLc=}"
           scope: GLOBAL
           username: "jenkins"
+      - usernamePassword:
+          description: "GithubMapena"
+          id: "GithubMapena"
+          password: "{AQAAABAAAAAgkHAAJcIhz1M9UzcKCbZTWqTptYAVVH51QGMiPEc0lZRIzVugMOhfHPFGBt5Ygn6B}"
+          scope: GLOBAL
+          username: "mapena"
+      - string:
+          description: "tockenslack"
+          id: "tokenslack"
+          scope: GLOBAL
+          secret: "{AQAAABAAAAAgin9BRufGwLFLFurA+wI06IcemWFdyKb632/Wv16r9MsZ9IjetsAOYY6+FJJrRacp}"
 jenkins:
   agentProtocols:
   - "JNLP4-connect"
@@ -63,6 +74,7 @@ jenkins:
         - "timezone"
         - mailer:
             emailAddress: "admin@admin.com.ar"
+        - "slack"
   slaveAgentPort: -1
   updateCenter:
     sites:
@@ -103,6 +115,12 @@ unclassified:
     hideCredentials: false
     showEntireCommitSummaryInChanges: false
     useExistingAccountWithSameEmail: false
+  globalSlackNotifier:
+    notifyOnAborted: false
+    notifyOnFail: false
+    notifyOnNotBuilt: false
+    notifyOnSuccess: false
+    notifyOnUnstable: false
   junitTestResultStorage:
     storage: "file"
   location:
@@ -114,6 +132,12 @@ unclassified:
     useTls: false
   pollSCM:
     pollingThreadCount: 10
+  slackNotifier:
+    botUser: false
+    room: "jencentos"
+    sendAsText: false
+    teamDomain: "mp23"
+    tokenCredentialId: "tokenslack"
   timestamper:
     allPipelines: false
     elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
